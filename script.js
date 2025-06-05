@@ -22,41 +22,41 @@ let currentFilter = 'all';
 let currentSearch = '';
 
 function renderDiseases(diseases) {
-if (diseases.length === 0) {
-    diseasesGrid.style.display = 'none';
-    noResults.style.display = 'block';
-    return;
-}
+    if (diseases.length === 0) {
+        diseasesGrid.style.display = 'none';
+        noResults.style.display = 'block';
+        return;
+    }
 
-diseasesGrid.style.display = 'grid';
-noResults.style.display = 'none';
+    diseasesGrid.style.display = 'grid';
+    noResults.style.display = 'none';
 
-diseasesGrid.innerHTML = diseases.map(disease => `
-    <div class="disease-card" onclick="openModal(${disease.id})">
-        <div class="disease-header">
-            <div class="disease-icon">${disease.icone}</div>
-            <div>
-                <div class="disease-title">${disease.nome}</div>
-                <div class="disease-pathogen">${disease.patogeno}</div>
+    diseasesGrid.innerHTML = diseases.map(disease => `
+        <div class="disease-card" onclick="openModal(${disease.id})">
+            <div class="disease-header">
+                <div class="disease-icon">${disease.icone}</div>
+                <div>
+                    <div class="disease-title">${disease.nome}</div>
+                    <div class="disease-pathogen">${disease.patogeno}</div>
+                </div>
+            </div>
+            
+            <div class="disease-description">${disease.descricao}</div>
+            
+            <div class="disease-symptoms">
+                <div class="symptoms-title">Sintomas Principais</div>
+                <div class="symptoms-list">${disease.sintomas.substring(0, 120)}...</div>
+            </div>
+            
+            <div class="disease-crops">
+                ${disease.culturas.map(cultura => `<span class="crop-tag">${cultura}</span>`).join('')}
+            </div>
+            
+            <div class="severity-indicator severity-${disease.severidade.toLowerCase()}">
+                Severidade ${disease.severidade.charAt(0).toUpperCase() + disease.severidade.slice(1)}
             </div>
         </div>
-        
-        <div class="disease-description">${disease.descricao}</div>
-        
-        <div class="disease-symptoms">
-            <div class="symptoms-title">Sintomas Principais</div>
-            <div class="symptoms-list">${disease.sintomas.substring(0, 120)}...</div>
-        </div>
-        
-        <div class="disease-crops">
-            ${disease.culturas.map(cultura => `<span class="crop-tag">${cultura}</span>`).join('')}
-        </div>
-        
-        <div class="severity-indicator severity-${disease.severidade}">
-            Severidade ${disease.severidade.charAt(0).toUpperCase() + disease.severidade.slice(1)}
-        </div>
-    </div>
-`).join('');
+    `).join('');
 }
 
 function filterDiseases() {
@@ -83,55 +83,56 @@ if (currentSearch) {
 
 renderDiseases(filtered);
 }
-
-function openModal(diseaseId) {
-const disease = diseasesData.find(d => d.id === diseaseId);
-if (!disease) return;
-
-modalContent.innerHTML = `
-    <div class="disease-header" style="margin-bottom: 25px;">
-        <div class="disease-icon" style="width: 60px; height: 60px; font-size: 2rem;">${disease.icone}</div>
-        <div>
-            <div class="disease-title" style="font-size: 1.5rem; margin-bottom: 5px;">${disease.nome}</div>
-            <div class="disease-pathogen" style="font-size: 1rem;">${disease.patogeno}</div>
-            <div style="margin-top: 10px;">
-                <span class="severity-indicator severity-${disease.severidade}">
-                    Severidade ${disease.severidade.charAt(0).toUpperCase() + disease.severidade.slice(1)}
-                </span>
+    function openModal(diseaseId) {
+    const disease = diseasesData.find(d => d.id === diseaseId);
+    if (!disease) return;
+    
+    modalContent.innerHTML = `
+        <div class="disease-header" style="margin-bottom: 25px;">
+            <div class="disease-icon" style="width: 60px; height: 60px; font-size: 2rem;">${disease.icone}</div>
+            <div>
+                <div class="disease-title" style="font-size: 1.5rem; margin-bottom: 5px;">${disease.nome}</div>
+                <div class="disease-pathogen" style="font-size: 1rem;">${disease.patogeno}</div>
+                <div style="margin-top: 10px;">
+                    <span class="severity-indicator severity-${disease.severidade.toLowerCase()}">
+                        Severidade ${disease.severidade.charAt(0).toUpperCase() + disease.severidade.slice(1)}
+                    </span>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div style="margin-bottom: 20px;">
-        <h3 style="color: #2c3e50; margin-bottom: 10px;">📋 Descrição</h3>
-        <p style="line-height: 1.6; color: #555;">${disease.descricao}</p>
-    </div>
-
-    <div style="margin-bottom: 20px;">
-        <h3 style="color: #e74c3c; margin-bottom: 10px;">⚠️ Sintomas</h3>
-        <p style="line-height: 1.6; color: #555;">${disease.sintomas}</p>
-    </div>
-
-    <div style="margin-bottom: 20px;">
-        <h3 style="color: #3498db; margin-bottom: 10px;">🌾 Culturas Afetadas</h3>
-        <div class="disease-crops">
-            ${disease.culturas.map(cultura => `<span class="crop-tag">${cultura}</span>`).join('')}
+    
+        <div style="margin-bottom: 20px;">
+            <h3 style="color: #4f8cff; margin-bottom: 10px;">📋 Descrição</h3>
+            <p style="line-height: 1.6; color: #b0b6be;">${disease.descricao}</p>
         </div>
-    </div>
-
-    <div style="margin-bottom: 20px;">
-        <h3 style="color: #27ae60; margin-bottom: 10px;">🛡️ Controle e Manejo</h3>
-        <p style="line-height: 1.6; color: #555;">${disease.controle}</p>
-    </div>
-
-    <div>
-        <h3 style="color: #f39c12; margin-bottom: 10px;">📊 Impacto Econômico</h3>
-        <p style="line-height: 1.6; color: #555;">${disease.impacto}</p>
-    </div>
-`;
-
-modal.style.display = 'block';
-document.body.style.overflow = 'hidden';
+    
+        <div style="margin-bottom: 20px;">
+            <h3 style="color: #ff6b6b; margin-bottom: 10px;">⚠️ Sintomas</h3>
+            <p style="line-height: 1.6; color: #e5e7eb;">${disease.sintomas}</p>
+        </div>
+    
+        <div style="margin-bottom: 20px;">
+            <h3 style="color: #27ae60; margin-bottom: 10px;">🌾 Culturas Afetadas</h3>
+            <div class="disease-crops">
+                ${disease.culturas.map(cultura => `<span class="crop-tag">${cultura}</span>`).join('')}
+            </div>
+        </div>
+    
+        <div style="margin-bottom: 20px;">
+            <h3 style="color: #ffd166; margin-bottom: 10px;">🛡️ Controle e Manejo</h3>
+            <ul style="line-height: 1.6; color: #b0b6be; padding-left: 18px;">
+                ${Array.isArray(disease.controle) ? disease.controle.map(item => `<li>${item}</li>`).join('') : disease.controle}
+            </ul>
+        </div>
+    
+        <div>
+            <h3 style="color: #f1c40f; margin-bottom: 10px;">📊 Impacto Econômico</h3>
+            <p style="line-height: 1.6; color: #e5e7eb;">${disease.impacto}</p>
+        </div>
+    `;
+    
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
