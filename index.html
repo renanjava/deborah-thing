@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Doenças de Plantas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .search-container {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #7f8c8d;
+            font-size: 1.2rem;
+        }
+
+        .filters {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: rgba(255, 255, 255, 0.9);
+            color: #2c3e50;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .diseases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .disease-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .disease-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #27ae60, #2ecc71);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .disease-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .disease-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .disease-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .disease-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+        }
+
+        .disease-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            line-height: 1.3;
+        }
+
+        .disease-pathogen {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .disease-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .disease-symptoms {
+            margin-bottom: 15px;
+        }
+
+        .symptoms-title {
+            font-weight: 600;
+            color: #e74c3c;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .symptoms-title::before {
+            content: '⚠️';
+            margin-right: 8px;
+        }
+
+        .symptoms-list {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .disease-crops {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .crop-tag {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .severity-indicator {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .severity-low {
+            background: #d5f4e6;
+            color: #27ae60;
+        }
+
+        .severity-medium {
+            background: #fff3cd;
+            color: #f39c12;
+        }
+
+        .severity-high {
+            background: #f8d7da;
+            color: #e74c3c;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #7f8c8d;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: #e74c3c;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .diseases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filters {
+                justify-content: center;
+            }
+
+            .filter-btn {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .modal-content {
+                padding: 20px;
+                width: 95%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 30px 15px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .disease-card {
+                padding: 20px;
+            }
+
+            .diseases-grid {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌱 Catálogo de Doenças de Plantas</h1>
+            <p>Sistema completo para identificação e manejo de doenças agrícolas. Diagnóstico preciso para uma
+                agricultura mais sustentável e produtiva.</p>
+        </div>
+
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="Buscar por doença, patógeno ou cultura..."
+                id="searchInput">
+            <span class="search-icon">🔍</span>
+        </div>
+
+        <div class="filters" id="filters">
+            <button class="filter-btn active" data-filter="all">Todas</button>
+            <button class="filter-btn" data-filter="fungica">Fúngicas</button>
+            <button class="filter-btn" data-filter="bacteriana">Bacterianas</button>
+            <button class="filter-btn" data-filter="viral">Virais</button>
+            <button class="filter-btn" data-filter="alta">Alta Severidade</button>
+        </div>
+
+        <div class="diseases-grid" id="diseasesGrid"></div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            <h3>🔍 Nenhuma doença encontrada</h3>
+            <p>Tente ajustar os filtros ou termo de busca</p>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="diseaseModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script>
+        const diseasesData = [
+            {
+                id: 1,
+                nome: "Ferrugem da Soja",
+                patogeno: "Phakopsora pachyrhizi",
+                tipo: "fungica",
+                severidade: "alta",
+                icone: "🦠",
+                descricao: "Doença fúngica devastadora que causa perdas significativas na produção de soja, caracterizada por pústulas amarelo-alaranjadas na face inferior das folhas.",
+                sintomas: "Pequenas pústulas circulares de coloração amarelo-alaranjada na face inferior das folhas, que evoluem para lesões necróticas marrom-escuras. Desfolha precoce e redução significativa da produtividade.",
+                culturas: ["Soja", "Feijão", "Kudzu"],
+                controle: "Aplicação preventiva de fungicidas específicos, uso de cultivares resistentes, rotação de culturas e manejo integrado com monitoramento constante.",
+                impacto: "Pode causar perdas de até 80% na produção se não controlada adequadamente. Uma das principais preocupações da sojicultura mundial."
+            },
+            {
+                id: 2,
+                nome: "Requeima da Batata",
+                patogeno: "Phytophthora infestans",
+                tipo: "fungica",
+                severidade: "alta",
+                icone: "🥔",
+                descricao: "Doença histórica que causou a Grande Fome da Irlanda, ainda hoje uma das principais ameaças às culturas de batata e tomate.",
+                sintomas: "Manchas irregulares marrom-escuras nas folhas que se expandem rapidamente, especialmente em condições úmidas. Lesões nos tubérculos com podridão seca e escura.",
+                culturas: ["Batata", "Tomate", "Berinjela"],
+                controle: "Fungicidas preventivos à base de cobre ou sistêmicos, manejo da irrigação, eliminação de restos culturais e uso de sementes certificadas.",
+                impacto: "Responsável por perdas históricas massivas. Pode destruir plantações inteiras em condições favoráveis de umidade e temperatura."
+            },
+            {
+                id: 3,
+                nome: "Mancha Angular do Feijão",
+                patogeno: "Pseudomonas syringae pv. phaseolicola",
+                tipo: "bacteriana",
+                severidade: "media",
+                icone: "🫘",
+                descricao: "Doença bacteriana comum do feijoeiro que causa lesões características angulares delimitadas pelas nervuras das folhas.",
+                sintomas: "Lesões pequenas, angulares e encharcadas nas folhas, delimitadas pelas nervuras. Em condições úmidas, exsudato bacteriano amarelado pode ser observado.",
+                culturas: ["Feijão", "Fava", "Feijão-vagem"],
+                controle: "Uso de sementes sadias, rotação de culturas, aplicação de bactericidas cúpricos e manejo adequado da irrigação.",
+                impacto: "Redução da área foliar e consequente diminuição da fotossíntese, afetando o rendimento da cultura."
+            },
+            {
+                id: 4,
+                nome: "Mosaico do Tabaco",
+                patogeno: "Tobacco mosaic virus (TMV)",
+                tipo: "viral",
+                severidade: "media",
+                icone: "🚬",
+                descricao: "Uma das primeiras doenças virais descobertas, causa mosaico característico nas folhas de diversas solanáceas.",
+                sintomas: "Padrão de mosaico com áreas verde-claras e verde-escuras nas folhas, deformação foliar, nanismo e redução do crescimento da planta.",
+                culturas: ["Tabaco", "Tomate", "Pimentão", "Berinjela"],
+                controle: "Controle de vetores (pulgões), eliminação de plantas infectadas, desinfecção de ferramentas e uso de cultivares resistentes.",
+                impacto: "Redução significativa da qualidade das folhas no tabaco e diminuição da produtividade em outras solanáceas."
+            },
+            {
+                id: 5,
+                nome: "Antracnose do Milho",
+                patogeno: "Colletotrichum graminicola",
+                tipo: "fungica",
+                severidade: "media",
+                icone: "🌽",
+                descricao: "Doença fúngica que afeta folhas, colmo e espigas do milho, sendo mais severa em condições de alta umidade e temperatura.",
+                sintomas: "Lesões ovais a elípticas nas folhas com centro claro e bordas marrom-avermelhadas. No colmo, causa podridão com escurecimento interno.",
+                culturas: ["Milho", "Sorgo", "Capim-sudan"],
+                controle: "Rotação de culturas, uso de híbridos resistentes, tratamento de sementes e aplicação de fungicidas quando necessário.",
+                impacto: "Pode causar quebra do colmo, afetando a colheita mecânica e reduzindo significativamente a produtividade."
+            },
+            {
+                id: 6,
+                nome: "Cancro Cítrico",
+                patogeno: "Xanthomonas citri subsp. citri",
+                tipo: "bacteriana",
+                severidade: "alta",
+                icone: "🍊",
+                descricao: "Doença bacteriana quarentenária que causa lesões características em folhas, ramos e frutos de citros, sendo de notificação obrigatória.",
+                sintomas: "Lesões circulares salientes com halo amarelado em folhas e frutos. Lesões necróticas podem causar desfolha e queda de frutos.",
+                culturas: ["Laranja", "Limão", "Tangerina", "Pomelo"],
+                controle: "Medidas quarentenárias rigorosas, eliminação de plantas infectadas, aplicação preventiva de cobre e controle do minador-dos-citros.",
+                impacto: "Doença de importância quarentenária que pode inviabilizar a exportação de citros e causar prejuízos econômicos enormes."
+            },
+            {
+                id: 7,
+                nome: "Míldio da Videira",
+                patogeno: "Plasmopara viticola",
+                tipo: "fungica",
+                severidade: "alta",
+                icone: "🍇",
+                descricao: "Doença fúngica devastadora da viticultura, especialmente problemática em regiões com alta umidade relativa.",
+                sintomas: "Manchas oleosas translúcidas na face superior das folhas (mancha de óleo) e eflorescência branca na face inferior. Afeta também cachos jovens.",
+                culturas: ["Uva", "Parreira"],
+                controle: "Aplicações preventivas de fungicidas sistêmicos e de contato, manejo da copa para arejamento e monitoramento meteorológico.",
+                impacto: "Uma das principais doenças da viticultura mundial, pode causar perdas totais em safras se não controlada adequadamente."
+            },
+            {
+                id: 8,
+                nome: "Murcha Bacteriana",
+                patogeno: "Ralstonia solanacearum",
+                tipo: "bacteriana",
+                severidade: "alta",
+                icone: "🍅",
+                descricao: "Doença bacteriana de solo que causa murcha vascular em diversas culturas, sendo especialmente severa em solanáceas.",
+                sintomas: "Murcha repentina das plantas, mesmo com solo úmido. Escurecimento vascular visível em cortes transversais do caule.",
+                culturas: ["Tomate", "Batata", "Berinjela", "Pimentão"],
+                controle: "Uso de cultivares resistentes, solarização do solo, rotação com gramíneas e controle rigoroso da irrigação.",
+                impacto: "Pode causar morte completa das plantas, inviabilizando cultivos sucessivos no mesmo local por vários anos."
+            }
+        ];
+
+        const diseasesGrid = document.getElementById('diseasesGrid');
+        const searchInput = document.getElementById('searchInput');
+        const filters = document.getElementById('filters');
+        const noResults = document.getElementById('noResults');
+        const modal = document.getElementById('diseaseModal');
+        const modalContent = document.getElementById('modalContent');
+        const modalClose = document.getElementById('modalClose');
+
+        let currentFilter = 'all';
+        let currentSearch = '';
+
+        function renderDiseases(diseases) {
+            if (diseases.length === 0) {
+                diseasesGrid.style.display = 'none';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            diseasesGrid.style.display = 'grid';
+            noResults.style.display = 'none';
+
+            diseasesGrid.innerHTML = diseases.map(disease => `
+                <div class="disease-card" onclick="openModal(${disease.id})">
+                    <div class="disease-header">
+                        <div class="disease-icon">${disease.icone}</div>
+                        <div>
+                            <div class="disease-title">${disease.nome}</div>
+                            <div class="disease-pathogen">${disease.patogeno}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="disease-description">${disease.descricao}</div>
+                    
+                    <div class="disease-symptoms">
+                        <div class="symptoms-title">Sintomas Principais</div>
+                        <div class="symptoms-list">${disease.sintomas.substring(0, 120)}...</div>
+                    </div>
+                    
+                    <div class="disease-crops">
+                        ${disease.culturas.map(cultura => `<span class="crop-tag">${cultura}</span>`).join('')}
+                    </div>
+                    
+                    <div class="severity-indicator severity-${disease.severidade}">
+                        Severidade ${disease.severidade.charAt(0).toUpperCase() + disease.severidade.slice(1)}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterDiseases() {
+            let filtered = diseasesData;
+
+            if (currentFilter !== 'all') {
+                if (currentFilter === 'alta') {
+                    filtered = filtered.filter(disease => disease.severidade === 'alta');
+                } else {
+                    filtered = filtered.filter(disease => disease.tipo === currentFilter);
+                }
+            }
+
+            if (currentSearch) {
+                const searchTerm = currentSearch.toLowerCase().trim();
+                filtered = filtered.filter(disease =>
+                    disease.nome.toLowerCase().includes(searchTerm) ||
+                    disease.patogeno.toLowerCase().includes(searchTerm) ||
+                    disease.culturas.some(cultura => cultura.toLowerCase().includes(searchTerm)) ||
+                    disease.sintomas.toLowerCase().includes(searchTerm) ||
+                    disease.descricao.toLowerCase().includes(searchTerm)
+                );
+            }
+
+            renderDiseases(filtered);
+        }
+
+        function openModal(diseaseId) {
+            const disease = diseasesData.find(d => d.id === diseaseId);
+            if (!disease) return;
+
+            modalContent.innerHTML = `
+                <div class="disease-header" style="margin-bottom: 25px;">
+                    <div class="disease-icon" style="width: 60px; height: 60px; font-size: 2rem;">${disease.icone}</div>
+                    <div>
+                        <div class="disease-title" style="font-size: 1.5rem; margin-bottom: 5px;">${disease.nome}</div>
+                        <div class="disease-pathogen" style="font-size: 1rem;">${disease.patogeno}</div>
+                        <div style="margin-top: 10px;">
+                            <span class="severity-indicator severity-${disease.severidade}">
+                                Severidade ${disease.severidade.charAt(0).toUpperCase() + disease.severidade.slice(1)}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #2c3e50; margin-bottom: 10px;">📋 Descrição</h3>
+                    <p style="line-height: 1.6; color: #555;">${disease.descricao}</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #e74c3c; margin-bottom: 10px;">⚠️ Sintomas</h3>
+                    <p style="line-height: 1.6; color: #555;">${disease.sintomas}</p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #3498db; margin-bottom: 10px;">🌾 Culturas Afetadas</h3>
+                    <div class="disease-crops">
+                        ${disease.culturas.map(cultura => `<span class="crop-tag">${cultura}</span>`).join('')}
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <h3 style="color: #27ae60; margin-bottom: 10px;">🛡️ Controle e Manejo</h3>
+                    <p style="line-height: 1.6; color: #555;">${disease.controle}</p>
+                </div>
+
+                <div>
+                    <h3 style="color: #f39c12; margin-bottom: 10px;">📊 Impacto Econômico</h3>
+                    <p style="line-height: 1.6; color: #555;">${disease.impacto}</p>
+                </div>
+            `;
+
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            currentSearch = e.target.value;
+            filterDiseases();
+        });
+
+        filters.addEventListener('click', (e) => {
+            if (e.target.classList.contains('filter-btn')) {
+                filters.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+
+                e.target.classList.add('active');
+
+                currentFilter = e.target.dataset.filter;
+                filterDiseases();
+            }
+        });
+
+        modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderDiseases(diseasesData);
+        });
+
+        window.openModal = openModal;
+    </script>
+</body>
+
+</html>
