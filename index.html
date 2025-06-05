@@ -389,111 +389,221 @@
 
     <script>
         const diseasesData = [
-            {
-                id: 1,
-                nome: "Ferrugem da Soja",
-                patogeno: "Phakopsora pachyrhizi",
-                tipo: "fungica",
-                severidade: "alta",
-                icone: "🦠",
-                descricao: "Doença fúngica devastadora que causa perdas significativas na produção de soja, caracterizada por pústulas amarelo-alaranjadas na face inferior das folhas.",
-                sintomas: "Pequenas pústulas circulares de coloração amarelo-alaranjada na face inferior das folhas, que evoluem para lesões necróticas marrom-escuras. Desfolha precoce e redução significativa da produtividade.",
-                culturas: ["Soja", "Feijão", "Kudzu"],
-                controle: "Aplicação preventiva de fungicidas específicos, uso de cultivares resistentes, rotação de culturas e manejo integrado com monitoramento constante.",
-                impacto: "Pode causar perdas de até 80% na produção se não controlada adequadamente. Uma das principais preocupações da sojicultura mundial."
-            },
-            {
-                id: 2,
-                nome: "Requeima da Batata",
-                patogeno: "Phytophthora infestans",
-                tipo: "fungica",
-                severidade: "alta",
-                icone: "🥔",
-                descricao: "Doença histórica que causou a Grande Fome da Irlanda, ainda hoje uma das principais ameaças às culturas de batata e tomate.",
-                sintomas: "Manchas irregulares marrom-escuras nas folhas que se expandem rapidamente, especialmente em condições úmidas. Lesões nos tubérculos com podridão seca e escura.",
-                culturas: ["Batata", "Tomate", "Berinjela"],
-                controle: "Fungicidas preventivos à base de cobre ou sistêmicos, manejo da irrigação, eliminação de restos culturais e uso de sementes certificadas.",
-                impacto: "Responsável por perdas históricas massivas. Pode destruir plantações inteiras em condições favoráveis de umidade e temperatura."
-            },
-            {
-                id: 3,
-                nome: "Mancha Angular do Feijão",
-                patogeno: "Pseudomonas syringae pv. phaseolicola",
-                tipo: "bacteriana",
-                severidade: "media",
-                icone: "🫘",
-                descricao: "Doença bacteriana comum do feijoeiro que causa lesões características angulares delimitadas pelas nervuras das folhas.",
-                sintomas: "Lesões pequenas, angulares e encharcadas nas folhas, delimitadas pelas nervuras. Em condições úmidas, exsudato bacteriano amarelado pode ser observado.",
-                culturas: ["Feijão", "Fava", "Feijão-vagem"],
-                controle: "Uso de sementes sadias, rotação de culturas, aplicação de bactericidas cúpricos e manejo adequado da irrigação.",
-                impacto: "Redução da área foliar e consequente diminuição da fotossíntese, afetando o rendimento da cultura."
-            },
-            {
-                id: 4,
-                nome: "Mosaico do Tabaco",
-                patogeno: "Tobacco mosaic virus (TMV)",
-                tipo: "viral",
-                severidade: "media",
-                icone: "🚬",
-                descricao: "Uma das primeiras doenças virais descobertas, causa mosaico característico nas folhas de diversas solanáceas.",
-                sintomas: "Padrão de mosaico com áreas verde-claras e verde-escuras nas folhas, deformação foliar, nanismo e redução do crescimento da planta.",
-                culturas: ["Tabaco", "Tomate", "Pimentão", "Berinjela"],
-                controle: "Controle de vetores (pulgões), eliminação de plantas infectadas, desinfecção de ferramentas e uso de cultivares resistentes.",
-                impacto: "Redução significativa da qualidade das folhas no tabaco e diminuição da produtividade em outras solanáceas."
-            },
-            {
-                id: 5,
-                nome: "Antracnose do Milho",
-                patogeno: "Colletotrichum graminicola",
-                tipo: "fungica",
-                severidade: "media",
-                icone: "🌽",
-                descricao: "Doença fúngica que afeta folhas, colmo e espigas do milho, sendo mais severa em condições de alta umidade e temperatura.",
-                sintomas: "Lesões ovais a elípticas nas folhas com centro claro e bordas marrom-avermelhadas. No colmo, causa podridão com escurecimento interno.",
-                culturas: ["Milho", "Sorgo", "Capim-sudan"],
-                controle: "Rotação de culturas, uso de híbridos resistentes, tratamento de sementes e aplicação de fungicidas quando necessário.",
-                impacto: "Pode causar quebra do colmo, afetando a colheita mecânica e reduzindo significativamente a produtividade."
-            },
-            {
-                id: 6,
-                nome: "Cancro Cítrico",
-                patogeno: "Xanthomonas citri subsp. citri",
-                tipo: "bacteriana",
-                severidade: "alta",
-                icone: "🍊",
-                descricao: "Doença bacteriana quarentenária que causa lesões características em folhas, ramos e frutos de citros, sendo de notificação obrigatória.",
-                sintomas: "Lesões circulares salientes com halo amarelado em folhas e frutos. Lesões necróticas podem causar desfolha e queda de frutos.",
-                culturas: ["Laranja", "Limão", "Tangerina", "Pomelo"],
-                controle: "Medidas quarentenárias rigorosas, eliminação de plantas infectadas, aplicação preventiva de cobre e controle do minador-dos-citros.",
-                impacto: "Doença de importância quarentenária que pode inviabilizar a exportação de citros e causar prejuízos econômicos enormes."
-            },
-            {
-                id: 7,
-                nome: "Míldio da Videira",
-                patogeno: "Plasmopara viticola",
-                tipo: "fungica",
-                severidade: "alta",
-                icone: "🍇",
-                descricao: "Doença fúngica devastadora da viticultura, especialmente problemática em regiões com alta umidade relativa.",
-                sintomas: "Manchas oleosas translúcidas na face superior das folhas (mancha de óleo) e eflorescência branca na face inferior. Afeta também cachos jovens.",
-                culturas: ["Uva", "Parreira"],
-                controle: "Aplicações preventivas de fungicidas sistêmicos e de contato, manejo da copa para arejamento e monitoramento meteorológico.",
-                impacto: "Uma das principais doenças da viticultura mundial, pode causar perdas totais em safras se não controlada adequadamente."
-            },
-            {
-                id: 8,
-                nome: "Murcha Bacteriana",
-                patogeno: "Ralstonia solanacearum",
-                tipo: "bacteriana",
-                severidade: "alta",
-                icone: "🍅",
-                descricao: "Doença bacteriana de solo que causa murcha vascular em diversas culturas, sendo especialmente severa em solanáceas.",
-                sintomas: "Murcha repentina das plantas, mesmo com solo úmido. Escurecimento vascular visível em cortes transversais do caule.",
-                culturas: ["Tomate", "Batata", "Berinjela", "Pimentão"],
-                controle: "Uso de cultivares resistentes, solarização do solo, rotação com gramíneas e controle rigoroso da irrigação.",
-                impacto: "Pode causar morte completa das plantas, inviabilizando cultivos sucessivos no mesmo local por vários anos."
-            }
-        ];
+                {
+                    id: 1,
+                    nome: "Cancro Cítrico",
+                    patogeno: "Xanthomonas citri subsp. citri",
+                    tipo: "bacteriana",
+                    severidade: "alta",
+                    icone: "🍋",
+                    classificacao: ["Plesionecrótico", "Localizado"],
+                    descricao: "Doença bacteriana quarentenária que causa lesões características em folhas, ramos e frutos de citros, sendo de notificação obrigatória no Brasil.",
+                    sintomas: "Lesões circulares salientes (cancros) com centro necrótico e halo amarelado característico em folhas e frutos. As lesões têm aspecto corticoso e podem causar desfolha prematura.",
+                    sintomas_detalhados: "Morfologia: Lesões circulares de 2-10mm de diâmetro, salientes, com centro necrótico marrom e halo amarelo bem definido. Forma: Circular a irregular. Cor: Centro marrom-escuro com halo amarelo-claro. Padrão: Distribuição aleatória na superfície foliar.",
+                    culturas: ["Limão", "Laranja", "Tangerina", "Pomelo"],
+                    controle: [
+                        "Medidas quarentenárias rigorosas",
+                        "Eliminação de plantas infectadas",
+                        "Aplicação preventiva de compostos cúpricos",
+                        "Controle do minador-dos-citros (vetor)",
+                        "Desinfecção de ferramentas",
+                        "Quebra-vento para reduzir disseminação"
+                    ],
+                    impacto: "Doença de importância quarentenária que pode inviabilizar a exportação de citros e causar prejuízos econômicos de milhões de reais ao agronegócio brasileiro."
+                },
+                {
+                    id: 2,
+                    nome: "Verrugose dos Citros",
+                    patogeno: "Elsinoë fawcettii",
+                    tipo: "fungica",
+                    severidade: "media",
+                    icone: "🍊",
+                    classificacao: ["Hiperplástico", "Localizado"],
+                    descricao: "Doença fúngica que causa lesões verrucosas características em frutos jovens e folhas de citros, afetando principalmente a qualidade dos frutos.",
+                    sintomas: "Lesões verrucosas, salientes e irregulares em frutos jovens. Em folhas, manchas pequenas com centro claro e bordas escuras.",
+                    sintomas_detalhados: "Morfologia: Lesões verrucosas, corticosas e salientes de 1-5mm. Forma: Irregular, com superfície rugosa. Cor: Marrom-clara a escura. Padrão: Agrupadas em frutos jovens, esparsas em folhas maduras.",
+                    culturas: ["Limão", "Laranja doce", "Tangerina"],
+                    controle: [
+                        "Aplicação de fungicidas cúpricos",
+                        "Fungicidas sistêmicos em períodos críticos",
+                        "Poda para arejamento da copa",
+                        "Eliminação de frutos afetados",
+                        "Controle da irrigação"
+                    ],
+                    impacto: "Reduz significativamente o valor comercial dos frutos, especialmente para mercado in natura, podendo causar perdas de até 30% no valor da produção."
+                },
+                {
+                    id: 3,
+                    nome: "Morte dos Ponteiros da Manga",
+                    patogeno: "Lasiodiplodia theobromae",
+                    tipo: "fungica",
+                    severidade: "alta",
+                    icone: "🥭",
+                    classificacao: ["Holonecrótico", "Sistêmico"],
+                    descricao: "Doença fúngica devastadora que causa necrose dos ponteiros e ramos da mangueira, podendo levar à morte da planta em casos severos.",
+                    sintomas: "Necrose progressiva dos ponteiros, escurecimento vascular, gomose e morte descendente dos ramos. Folhas amarelam e secam rapidamente.",
+                    sintomas_detalhados: "Morfologia: Necrose descendente dos ramos, escurecimento vascular interno. Forma: Linear ao longo dos ramos. Cor: Marrom-escura a preta. Padrão: Progressão descendente dos ponteiros para ramos mais grossos.",
+                    culturas: ["Manga", "Cajá", "Seriguela"],
+                    controle: [
+                        "Poda sanitária dos ramos afetados",
+                        "Aplicação de fungicidas sistêmicos",
+                        "Pasta bordalesa em ferimentos",
+                        "Manejo nutricional adequado",
+                        "Controle de estresse hídrico",
+                        "Eliminação de material vegetal infectado"
+                    ],
+                    impacto: "Pode causar morte de plantas adultas e perdas de até 40% na produção em pomares severamente afetados, representando sérios prejuízos econômicos."
+                },
+                {
+                    id: 4,
+                    nome: "Sigatoka da Bananeira",
+                    patogeno: "Mycosphaerella fijiensis",
+                    tipo: "fungica",
+                    severidade: "alta",
+                    icone: "🍌",
+                    classificacao: ["Plesionecrótico", "Foliar"],
+                    descricao: "Doença fúngica mais destrutiva da bananicultura mundial, causando necrose foliar severa e redução drástica da produtividade.",
+                    sintomas: "Estrias amarelas que evoluem para manchas necróticas com halo amarelo. Coalescência das lesões causa necrose de grandes áreas foliares.",
+                    sintomas_detalhados: "Morfologia: Inicialmente estrias cloróticas de 1-2mm que evoluem para manchas elípticas de 10-20mm. Forma: Elíptica a irregular. Cor: Centro necrótico marrom com halo amarelo. Padrão: Paralelo às nervuras foliares.",
+                    culturas: ["Banana", "Plátano"],
+                    controle: [
+                        "Aplicação sistemática de fungicidas",
+                        "Remoção de folhas infectadas",
+                        "Melhoramento do arejamento",
+                        "Controle da irrigação",
+                        "Uso de variedades resistentes",
+                        "Adubação equilibrada"
+                    ],
+                    impacto: "Considerada a doença mais destrutiva da bananicultura, pode causar perdas de até 50% na produção e inviabilizar o cultivo em regiões tropicais úmidas."
+                },
+                {
+                    id: 5,
+                    nome: "Fumagina dos Citros",
+                    patogeno: "Capnodium citri",
+                    tipo: "fungica",
+                    severidade: "media",
+                    icone: "🍃",
+                    classificacao: ["Hiperplástico", "Superficial"],
+                    descricao: "Doença fúngica superficial que forma uma camada escura semelhante à fuligem sobre folhas e frutos, reduzindo a fotossíntese.",
+                    sintomas: "Camada superficial escura, semelhante à fuligem, que recobre folhas, ramos e frutos. Facilmente removível com fricção.",
+                    sintomas_detalhados: "Morfologia: Crescimento micelial superficial formando camada escura. Forma: Cobertura uniforme ou em manchas. Cor: Preta a cinza-escura. Padrão: Sobre melada deixada por insetos sugadores.",
+                    culturas: ["Limão", "Laranja", "Tangerina", "Grapefruit"],
+                    controle: [
+                        "Controle de insetos sugadores (cochonilhas, pulgões)",
+                        "Lavagem das plantas com água",
+                        "Aplicação de óleo mineral",
+                        "Melhoria da aeração da copa",
+                        "Controle de formigas"
+                    ],
+                    impacto: "Reduz a capacidade fotossintética das plantas e deprecia a qualidade comercial dos frutos, causando perdas econômicas moderadas."
+                },
+                {
+                    id: 6,
+                    nome: "Mancha de Alga do Abacate",
+                    patogeno: "Cephaleuros virescens",
+                    tipo: "algal",
+                    severidade: "media",
+                    icone: "🥑",
+                    classificacao: ["Plesionecrótico", "Foliar"],
+                    descricao: "Doença causada por alga parasita que forma manchas características verde-alaranjadas em folhas de abacate, especialmente em regiões úmidas.",
+                    sintomas: "Manchas circulares verde-alaranjadas com bordas bem definidas. Em casos severos, pode causar desfolha e redução do vigor da planta.",
+                    sintomas_detalhados: "Morfologia: Manchas circulares de 2-15mm de diâmetro. Forma: Circular a oval. Cor: Verde-alaranjada a ferrugínea. Padrão: Distribuição aleatória na superfície foliar, mais comum na face superior.",
+                    culturas: ["Abacate", "Manga", "Citros"],
+                    controle: [
+                        "Aplicação de fungicidas cúpricos",
+                        "Melhoria da aeração da copa",
+                        "Controle da umidade",
+                        "Poda de limpeza",
+                        "Adubação equilibrada"
+                    ],
+                    impacto: "Causa desfolha prematura e redução do vigor das plantas, afetando a produtividade em 15-25% em condições favoráveis ao patógeno."
+                },
+                {
+                    id: 7,
+                    nome: "Podridão Vermelha da Cana",
+                    patogeno: "Colletotrichum falcatum",
+                    tipo: "fungica",
+                    severidade: "alta",
+                    icone: "🎋",
+                    classificacao: ["Holonecrótico", "Vascular"],
+                    descricao: "Doença fúngica devastadora que causa podridão interna dos colmos da cana-de-açúcar, caracterizada por coloração avermelhada típica.",
+                    sintomas: "Podridão interna do colmo com coloração avermelhada característica. Externamente pode apresentar manchas avermelhadas e crescimento de fungos.",
+                    sintomas_detalhados: "Morfologia: Podridão interna do colmo com descoloração. Forma: Linear ao longo do colmo. Cor: Vermelha intensa no interior do colmo. Padrão: Progressão ascendente ou descendente no colmo.",
+                    culturas: ["Cana-de-açúcar"],
+                    controle: [
+                        "Uso de variedades resistentes",
+                        "Tratamento térmico de mudas",
+                        "Controle de pragas que causam ferimentos",
+                        "Evitar ferimentos mecânicos",
+                        "Rotação de culturas",
+                        "Eliminação de touceiras infectadas"
+                    ],
+                    impacto: "Uma das principais doenças da cana-de-açúcar, pode causar perdas de 20-30% na produção e significativa redução na qualidade do caldo."
+                },
+                {
+                    id: 8,
+                    nome: "Encarquilhamento da Soja",
+                    patogeno: "Bean pod mottle virus (BPMV)",
+                    tipo: "viral",
+                    severidade: "media",
+                    icone: "🌿",
+                    classificacao: ["Hipoplástico", "Sistêmico"],
+                    descricao: "Doença viral transmitida por besouros que causa deformação e encarquilhamento das folhas de soja, afetando o desenvolvimento da planta.",
+                    sintomas: "Encarquilhamento e deformação das folhas, mosaico verde-claro e escuro, nanismo da planta e redução no tamanho das vagens.",
+                    sintomas_detalhados: "Morfologia: Deformação foliar com encarquilhamento das bordas. Forma: Folhas distorcidas e curvadas. Cor: Mosaico de tons verdes. Padrão: Sintomas sistêmicos em toda a planta.",
+                    culturas: ["Soja", "Feijão"],
+                    controle: [
+                        "Controle de besouros vetores",
+                        "Uso de variedades resistentes",
+                        "Eliminação de plantas hospedeiras alternativas",
+                        "Manejo integrado de pragas",
+                        "Rotação de culturas"
+                    ],
+                    impacto: "Pode causar redução de 10-20% na produtividade e afetar a qualidade dos grãos, especialmente em infecções precoces."
+                },
+                {
+                    id: 9,
+                    nome: "Oídio do Quiabo",
+                    patogeno: "Erysiphe cichoracearum",
+                    tipo: "fungica",
+                    severidade: "media",
+                    icone: "🌶️",
+                    classificacao: ["Hiperplástico", "Superficial"],
+                    descricao: "Doença fúngica que forma uma camada pulverulenta branca sobre folhas e ramos de quiabo, especialmente em condições de baixa umidade.",
+                    sintomas: "Crescimento pulverulento branco na superfície das folhas, inicialmente em manchas circulares que se expandem e coalescem.",
+                    sintomas_detalhados: "Morfologia: Crescimento micelial superficial pulverulento. Forma: Manchas circulares que se expandem. Cor: Branca a cinza-clara. Padrão: Inicialmente na face superior das folhas, expandindo-se para ambas as faces.",
+                    culturas: ["Quiabo", "Berinjela", "Jiló"],
+                    controle: [
+                        "Aplicação de fungicidas sistêmicos",
+                        "Enxofre em pó ou calda sulfocálcica",
+                        "Melhoria da aeração",
+                        "Evitar adubação nitrogenada excessiva",
+                        "Controle da irrigação"
+                    ],
+                    impacto: "Reduz a capacidade fotossintética das plantas e pode causar perdas de 15-30% na produção de frutos comerciais."
+                },
+                {
+                    id: 10,
+                    nome: "Ferrugem da Pitanga",
+                    patogeno: "Puccinia psidii",
+                    tipo: "fungica",
+                    severidade: "média",
+                    icone: "🍂",
+                    classificacao: ["Foliar", "Epidérmica"],
+                    descricao: "Doença fúngica que afeta diversas espécies da família Myrtaceae, incluindo a pitangueira, provocando lesões foliares e queda prematura das folhas.",
+                    sintomas: "Manchas cloróticas nas folhas jovens, seguidas por pústulas alaranjadas na face inferior, que liberam esporos.",
+                    sintomas_detalhados: "Morfologia: Pústulas arredondadas. Cor: Laranja vivo. Localização: Predominantemente na face inferior das folhas, podendo atingir ramos e frutos.",
+                    culturas: ["Pitangueira", "Goiabeira", "Eucalipto", "Jambolão"],
+                    controle: [
+                        "Plantio de variedades resistentes",
+                        "Poda de ramos infectados",
+                        "Aplicação de fungicidas sistêmicos e de contato",
+                        "Evitar excesso de umidade nas folhas",
+                        "Remoção de plantas hospedeiras alternativas próximas"
+                    ],
+                    impacto: "Compromete o desenvolvimento da planta, provoca desfolha precoce, reduz a frutificação e afeta o valor comercial das frutas."
+                }
+            ]
 
         const diseasesGrid = document.getElementById('diseasesGrid');
         const searchInput = document.getElementById('searchInput');
