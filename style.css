@@ -156,17 +156,43 @@ body {
 }
 
 .disease-icon {
-    width: 54px;
-    height: 54px;
+    width: 60px;
+    height: 60px;
     border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
     margin-right: 18px;
-    background: linear-gradient(135deg, #4f8cff, #27ae60);
-    color: #fff;
+    background: #23272f;
     box-shadow: 0 2px 8px rgba(79, 140, 255, 0.10);
+    overflow: hidden;
+    border: 2px solid #353a45;
+    padding: 0;
+}
+
+.disease-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    background: #23272f;
+    transition: transform 0.3s;
+}
+
+.disease-card:hover .disease-icon img {
+    transform: scale(1.07);
+}
+
+.modal-img {
+    width: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 24px rgba(79, 140, 255, 0.10);
+    background: #23272f;
+    display: block;
 }
 
 .disease-title {

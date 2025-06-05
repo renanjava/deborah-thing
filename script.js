@@ -34,7 +34,9 @@ function renderDiseases(diseases) {
     diseasesGrid.innerHTML = diseases.map(disease => `
         <div class="disease-card" onclick="openModal(${disease.id})">
             <div class="disease-header">
-                <div class="disease-icon">${disease.icone}</div>
+                <div class="disease-icon">
+                    <img src="${disease.icone}" alt="${disease.nome}" />
+                </div>
                 <div>
                     <div class="disease-title">${disease.nome}</div>
                     <div class="disease-pathogen">${disease.patogeno}</div>
@@ -83,21 +85,19 @@ if (currentSearch) {
 
 renderDiseases(filtered);
 }
-    function openModal(diseaseId) {
+function openModal(diseaseId) {
     const disease = diseasesData.find(d => d.id === diseaseId);
     if (!disease) return;
     
     modalContent.innerHTML = `
+        <img class="modal-img" src="${disease.icone}" alt="${disease.nome}" />
         <div class="disease-header" style="margin-bottom: 25px;">
-            <div class="disease-icon" style="width: 60px; height: 60px; font-size: 2rem;">${disease.icone}</div>
-            <div>
-                <div class="disease-title" style="font-size: 1.5rem; margin-bottom: 5px;">${disease.nome}</div>
-                <div class="disease-pathogen" style="font-size: 1rem;">${disease.patogeno}</div>
-                <div style="margin-top: 10px;">
-                    <span class="severity-indicator severity-${disease.severidade.toLowerCase()}">
-                        Severidade ${disease.severidade.charAt(0).toUpperCase() + disease.severidade.slice(1)}
-                    </span>
-                </div>
+            <div class="disease-title" style="font-size: 1.5rem; margin-bottom: 5px;">${disease.nome}</div>
+            <div class="disease-pathogen" style="font-size: 1rem;">${disease.patogeno}</div>
+            <div style="margin-top: 10px;">
+                <span class="severity-indicator severity-${disease.severidade.toLowerCase()}">
+                    Severidade ${disease.severidade.charAt(0).toUpperCase() + disease.severidade.slice(1)}
+                </span>
             </div>
         </div>
     
