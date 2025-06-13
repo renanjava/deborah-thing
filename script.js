@@ -50,10 +50,6 @@ function renderDiseases(diseases) {
                 <div class="symptoms-list">${disease.sintomas.substring(0, 120)}...</div>
             </div>
             
-            <div class="disease-crops">
-                ${disease.culturas.map(cultura => `<span class="crop-tag">${cultura}</span>`).join('')}
-            </div>
-            
             <div class="severity-indicator severity-${disease.severidade.toLowerCase()}">
                 Severidade ${disease.severidade.charAt(0).toUpperCase() + disease.severidade.slice(1)}
             </div>
@@ -77,7 +73,6 @@ if (currentSearch) {
     filtered = filtered.filter(disease =>
         disease.nome.toLowerCase().includes(searchTerm) ||
         disease.patogeno.toLowerCase().includes(searchTerm) ||
-        disease.culturas.some(cultura => cultura.toLowerCase().includes(searchTerm)) ||
         disease.sintomas.toLowerCase().includes(searchTerm) ||
         disease.descricao.toLowerCase().includes(searchTerm)
     );
@@ -109,13 +104,6 @@ function openModal(diseaseId) {
         <div style="margin-bottom: 20px;">
             <h3 style="color: #ff6b6b; margin-bottom: 10px;">⚠️ Sintomas</h3>
             <p style="line-height: 1.6; color: #e5e7eb;">${disease.sintomas}</p>
-        </div>
-    
-        <div style="margin-bottom: 20px;">
-            <h3 style="color: #27ae60; margin-bottom: 10px;">🌾 Culturas Afetadas</h3>
-            <div class="disease-crops">
-                ${disease.culturas.map(cultura => `<span class="crop-tag">${cultura}</span>`).join('')}
-            </div>
         </div>
     
         <div style="margin-bottom: 20px;">

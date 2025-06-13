@@ -10,7 +10,6 @@
         "descricao": "Doença bacteriana quarentenária que causa lesões características em folhas, ramos e frutos de citros, sendo de notificação obrigatória no Brasil.",
         "sintomas": "Lesões circulares salientes (cancros) com centro necrótico e halo amarelado característico em folhas e frutos. As lesões têm aspecto corticoso e podem causar desfolha prematura.",
         "sintomas_detalhados": "Morfologia: Lesões circulares de 2-10mm de diâmetro, salientes, com centro necrótico marrom e halo amarelo bem definido. Forma: Circular a irregular. Cor: Centro marrom-escuro com halo amarelo-claro. Padrão: Distribuição aleatória na superfície foliar.",
-        "culturas": ["Limão", "Laranja", "Tangerina", "Pomelo"],
         "controle": [
             "Medidas quarentenárias rigorosas",
             "Eliminação de plantas infectadas",
@@ -32,7 +31,6 @@
         "descricao": "Doença fúngica que causa lesões verrucosas características em frutos jovens e folhas de citros, afetando principalmente a qualidade dos frutos.",
         "sintomas": "Lesões verrucosas, salientes e irregulares em frutos jovens. Em folhas, manchas pequenas com centro claro e bordas escuras.",
         "sintomas_detalhados": "Morfologia: Lesões verrucosas, corticosas e salientes de 1-5mm. Forma: Irregular, com superfície rugosa. Cor: Marrom-clara a escura. Padrão: Agrupadas em frutos jovens, esparsas em folhas maduras.",
-        "culturas": ["Limão", "Laranja doce", "Tangerina"],
         "controle": [
             "Aplicação de fungicidas cúpricos",
             "Fungicidas sistêmicos em períodos críticos",
@@ -53,7 +51,6 @@
         "descricao": "Doença fúngica devastadora que causa necrose dos ponteiros e ramos da mangueira, podendo levar à morte da planta em casos severos.",
         "sintomas": "Necrose progressiva dos ponteiros, escurecimento vascular, gomose e morte descendente dos ramos. Folhas amarelam e secam rapidamente.",
         "sintomas_detalhados": "Morfologia: Necrose descendente dos ramos, escurecimento vascular interno. Forma: Linear ao longo dos ramos. Cor: Marrom-escura a preta. Padrão: Progressão descendente dos ponteiros para ramos mais grossos.",
-        "culturas": ["Manga", "Cajá", "Seriguela"],
         "controle": [
             "Poda sanitária dos ramos afetados",
             "Aplicação de fungicidas sistêmicos",
@@ -66,7 +63,7 @@
     },
     {
         "id": 4,
-        "nome": "Sigatoka da Bananeira",
+        "nome": "Sigatoka amarela da Bananeira",
         "patogeno": "Mycosphaerella fijiensis",
         "tipo": "fungica",
         "severidade": "alta",
@@ -75,7 +72,6 @@
         "descricao": "Doença fúngica mais destrutiva da bananicultura mundial, causando necrose foliar severa e redução drástica da produtividade.",
         "sintomas": "Estrias amarelas que evoluem para manchas necróticas com halo amarelo. Coalescência das lesões causa necrose de grandes áreas foliares.",
         "sintomas_detalhados": "Morfologia: Inicialmente estrias cloróticas de 1-2mm que evoluem para manchas elípticas de 10-20mm. Forma: Elíptica a irregular. Cor: Centro necrótico marrom com halo amarelo. Padrão: Paralelo às nervuras foliares.",
-        "culturas": ["Banana", "Plátano"],
         "controle": [
             "Aplicação sistemática de fungicidas",
             "Remoção de folhas infectadas",
@@ -97,7 +93,6 @@
         "descricao": "Doença fúngica superficial que forma uma camada escura semelhante à fuligem sobre folhas e frutos, reduzindo a fotossíntese.",
         "sintomas": "Camada superficial escura, semelhante à fuligem, que recobre folhas, ramos e frutos. Facilmente removível com fricção.",
         "sintomas_detalhados": "Morfologia: Crescimento micelial superficial formando camada escura. Forma: Cobertura uniforme ou em manchas. Cor: Preta a cinza-escura. Padrão: Sobre melada deixada por insetos sugadores.",
-        "culturas": ["Limão", "Laranja", "Tangerina", "Grapefruit"],
         "controle": [
             "Controle de insetos sugadores (cochonilhas, pulgões)",
             "Lavagem das plantas com água",
@@ -118,7 +113,6 @@
         "descricao": "Doença causada por alga parasita que forma manchas características verde-alaranjadas em folhas de abacate, especialmente em regiões úmidas.",
         "sintomas": "Manchas circulares verde-alaranjadas com bordas bem definidas. Em casos severos, pode causar desfolha e redução do vigor da planta.",
         "sintomas_detalhados": "Morfologia: Manchas circulares de 2-15mm de diâmetro. Forma: Circular a oval. Cor: Verde-alaranjada a ferrugínea. Padrão: Distribuição aleatória na superfície foliar, mais comum na face superior.",
-        "culturas": ["Abacate", "Manga", "Citros"],
         "controle": [
             "Aplicação de fungicidas cúpricos",
             "Melhoria da aeração da copa",
@@ -139,7 +133,6 @@
         "descricao": "Doença fúngica devastadora que causa podridão interna dos colmos da cana-de-açúcar, caracterizada por coloração avermelhada típica.",
         "sintomas": "Podridão interna do colmo com coloração avermelhada característica. Externamente pode apresentar manchas avermelhadas e crescimento de fungos.",
         "sintomas_detalhados": "Morfologia: Podridão interna do colmo com descoloração. Forma: Linear ao longo do colmo. Cor: Vermelha intensa no interior do colmo. Padrão: Progressão ascendente ou descendente no colmo.",
-        "culturas": ["Cana-de-açúcar"],
         "controle": [
             "Uso de variedades resistentes",
             "Tratamento térmico de mudas",
@@ -161,7 +154,6 @@
         "descricao": "Doença viral transmitida por besouros que causa deformação e encarquilhamento das folhas de soja, afetando o desenvolvimento da planta.",
         "sintomas": "Encarquilhamento e deformação das folhas, mosaico verde-claro e escuro, nanismo da planta e redução no tamanho das vagens.",
         "sintomas_detalhados": "Morfologia: Deformação foliar com encarquilhamento das bordas. Forma: Folhas distorcidas e curvadas. Cor: Mosaico de tons verdes. Padrão: Sintomas sistêmicos em toda a planta.",
-        "culturas": ["Soja", "Feijão"],
         "controle": [
             "Controle de besouros vetores",
             "Uso de variedades resistentes",
@@ -182,7 +174,6 @@
         "descricao": "Doença fúngica que forma uma camada pulverulenta branca sobre folhas e ramos de quiabo, especialmente em condições de baixa umidade.",
         "sintomas": "Crescimento pulverulento branco na superfície das folhas, inicialmente em manchas circulares que se expandem e coalescem.",
         "sintomas_detalhados": "Morfologia: Crescimento micelial superficial pulverulento. Forma: Manchas circulares que se expandem. Cor: Branca a cinza-clara. Padrão: Inicialmente na face superior das folhas, expandindo-se para ambas as faces.",
-        "culturas": ["Quiabo", "Berinjela", "Jiló"],
         "controle": [
             "Aplicação de fungicidas sistêmicos",
             "Enxofre em pó ou calda sulfocálcica",
@@ -194,16 +185,15 @@
     },
     {
         "id": 10,
-        "nome": "Ferrugem da Pitanga",
+        "nome": "Ferrugem do fruto da Pitanga",
         "patogeno": "Puccinia psidii",
         "tipo": "fungica",
         "severidade": "média",
         "icone": "./images/ferrugem-pitanga.jpg",
         "classificacao": ["Foliar", "Epidérmica"],
         "descricao": "Doença fúngica que afeta diversas espécies da família Myrtaceae, incluindo a pitangueira, provocando lesões foliares e queda prematura das folhas.",
-        "sintomas": "Manchas cloróticas nas folhas jovens, seguidas por pústulas alaranjadas na face inferior, que liberam esporos.",
+        "sintomas": "Manchas escuras e deprimidas nos frutos, com presença de pústulas alaranjadas que liberam esporos.",
         "sintomas_detalhados": "Morfologia: Pústulas arredondadas. Cor: Laranja vivo. Localização: Predominantemente na face inferior das folhas, podendo atingir ramos e frutos.",
-        "culturas": ["Pitangueira", "Goiabeira", "Eucalipto", "Jambolão"],
         "controle": [
             "Plantio de variedades resistentes",
             "Poda de ramos infectados",

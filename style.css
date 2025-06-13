@@ -6,9 +6,9 @@
 
 body {
     font-family: 'Inter', 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    background: linear-gradient(135deg, #2e473b 0%, #1f2e26 100%);
     min-height: 100vh;
-    color: #e5e7eb;
+    color: #e3f2e1;
     letter-spacing: 0.01em;
 }
 
@@ -22,7 +22,7 @@ body {
     text-align: center;
     margin-bottom: 40px;
     padding: 40px 20px;
-    background: rgba(36, 39, 46, 0.92);
+    background: rgba(39, 56, 46, 0.92);
     border-radius: 20px;
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
@@ -30,7 +30,7 @@ body {
 
 .header h1 {
     font-size: 2.5rem;
-    color: #f1f3f6;
+    color: #f0f6f0;
     margin-bottom: 10px;
     font-weight: 700;
     letter-spacing: 0.02em;
@@ -38,7 +38,7 @@ body {
 
 .header p {
     font-size: 1.1rem;
-    color: #b0b6be;
+    color: #b9c9b5;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
@@ -55,8 +55,8 @@ body {
     border: none;
     border-radius: 12px;
     font-size: 1rem;
-    background: #23272f;
-    color: #f1f3f6;
+    background: #2e3f34;
+    color: #f0f6f0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.13);
     transition: all 0.3s ease;
     font-family: 'Inter', 'Roboto', sans-serif;
@@ -66,7 +66,7 @@ body {
     outline: none;
     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.18);
     transform: translateY(-2px);
-    background: #2d313a;
+    background: #384f42;
 }
 
 .search-icon {
@@ -74,7 +74,7 @@ body {
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
-    color: #b0b6be;
+    color: #b9c9b5;
     font-size: 1.2rem;
 }
 
@@ -90,8 +90,8 @@ body {
     padding: 10px 22px;
     border: none;
     border-radius: 25px;
-    background: #23272f;
-    color: #b0b6be;
+    background: #2e3f34;
+    color: #b9c9b5;
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 500;
@@ -102,10 +102,10 @@ body {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: #4f8cff;
+    background: #6dbb68;
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(79, 140, 255, 0.18);
+    box-shadow: 0 4px 15px rgba(109, 187, 104, 0.18);
 }
 
 .diseases-grid {
@@ -116,7 +116,7 @@ body {
 }
 
 .disease-card {
-    background: linear-gradient(135deg, #23272f 80%, #2d313a 100%);
+    background: linear-gradient(135deg, #2e3f34 80%, #384f42 100%);
     border-radius: 18px;
     padding: 28px 24px 22px 24px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
@@ -124,7 +124,7 @@ body {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    border: 1.5px solid #353a45;
+    border: 1.5px solid #3a4e40;
 }
 
 .disease-card::before {
@@ -134,15 +134,15 @@ body {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #4f8cff, #27ae60);
+    background: linear-gradient(90deg, #6dbb68, #b17945);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
 
 .disease-card:hover {
     transform: translateY(-7px) scale(1.025);
-    box-shadow: 0 15px 40px rgba(79, 140, 255, 0.10), 0 8px 32px rgba(0, 0, 0, 0.22);
-    border-color: #4f8cff;
+    box-shadow: 0 15px 40px rgba(109, 187, 104, 0.10), 0 8px 32px rgba(0, 0, 0, 0.22);
+    border-color: #6dbb68;
 }
 
 .disease-card:hover::before {
@@ -163,10 +163,10 @@ body {
     align-items: center;
     justify-content: center;
     margin-right: 18px;
-    background: #23272f;
-    box-shadow: 0 2px 8px rgba(79, 140, 255, 0.10);
+    background: #2e3f34;
+    box-shadow: 0 2px 8px rgba(109, 187, 104, 0.10);
     overflow: hidden;
-    border: 2px solid #353a45;
+    border: 2px solid #3a4e40;
     padding: 0;
 }
 
@@ -176,7 +176,7 @@ body {
     object-fit: cover;
     border-radius: 12px;
     display: block;
-    background: #23272f;
+    background: #2e3f34;
     transition: transform 0.3s;
 }
 
@@ -190,28 +190,28 @@ body {
     object-fit: cover;
     border-radius: 14px;
     margin-bottom: 22px;
-    box-shadow: 0 4px 24px rgba(79, 140, 255, 0.10);
-    background: #23272f;
+    box-shadow: 0 4px 24px rgba(109, 187, 104, 0.10);
+    background: #2e3f34;
     display: block;
 }
 
 .disease-title {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #f1f3f6;
+    color: #f0f6f0;
     line-height: 1.3;
     font-family: 'Inter', 'Roboto', sans-serif;
 }
 
 .disease-pathogen {
-    color: #8fa1b3;
+    color: #a6bfa5;
     font-size: 0.98rem;
     font-style: italic;
     margin-bottom: 15px;
 }
 
 .disease-description {
-    color: #b0b6be;
+    color: #c7d8c4;
     line-height: 1.6;
     margin-bottom: 15px;
     font-size: 1rem;
@@ -223,7 +223,7 @@ body {
 
 .symptoms-title {
     font-weight: 600;
-    color: #ff6b6b;
+    color: #cf6e53;
     margin-bottom: 8px;
     display: flex;
     align-items: center;
@@ -236,7 +236,7 @@ body {
 }
 
 .symptoms-list {
-    color: #e5e7eb;
+    color: #e3f2e1;
     font-size: 0.97rem;
     line-height: 1.5;
 }
@@ -249,14 +249,14 @@ body {
 }
 
 .crop-tag {
-    background: linear-gradient(135deg, #4f8cff, #27ae60);
+    background: linear-gradient(135deg, #6dbb68, #b17945);
     color: #fff;
     padding: 4px 14px;
     border-radius: 15px;
     font-size: 0.85rem;
     font-weight: 500;
     letter-spacing: 0.01em;
-    box-shadow: 0 2px 8px rgba(79, 140, 255, 0.08);
+    box-shadow: 0 2px 8px rgba(109, 187, 104, 0.08);
 }
 
 .severity-indicator {
@@ -271,22 +271,22 @@ body {
 }
 
 .severity-alta {
-    background: #2d313a;
-    color: #ff6b6b;
-    border: 1px solid #ff6b6b;
+    background: #384f42;
+    color: #cf6e53;
+    border: 1px solid #cf6e53;
 }
 
 .severity-media,
 .severity-média {
-    background: #2d313a;
+    background: #384f42;
     color: #ffd166;
     border: 1px solid #ffd166;
 }
 
 .severity-baixa {
-    background: #2d313a;
-    color: #27ae60;
-    border: 1px solid #27ae60;
+    background: #384f42;
+    color: #6dbb68;
+    border: 1px solid #6dbb68;
 }
 
 .modal {
@@ -296,7 +296,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(30, 32, 38, 0.93);
+    background: rgba(39, 56, 46, 0.93);
     z-index: 1000;
     backdrop-filter: blur(5px);
 }
@@ -306,15 +306,15 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #23272f;
+    background: #2e3f34;
     border-radius: 20px;
     padding: 32px;
     max-width: 600px;
     width: 90%;
     max-height: 80vh;
     overflow-y: auto;
-    box-shadow: 0 20px 60px rgba(79, 140, 255, 0.10), 0 8px 32px rgba(0, 0, 0, 0.22);
-    color: #e5e7eb;
+    box-shadow: 0 20px 60px rgba(109, 187, 104, 0.10), 0 8px 32px rgba(0, 0, 0, 0.22);
+    color: #e3f2e1;
 }
 
 .modal-close {
@@ -323,18 +323,18 @@ body {
     right: 20px;
     font-size: 2rem;
     cursor: pointer;
-    color: #b0b6be;
+    color: #b9c9b5;
     transition: color 0.3s ease;
 }
 
 .modal-close:hover {
-    color: #ff6b6b;
+    color: #cf6e53;
 }
 
 .no-results {
     text-align: center;
     padding: 60px 20px;
-    color: #b0b6be;
+    color: #b9c9b5;
     font-size: 1.1rem;
 }
 
