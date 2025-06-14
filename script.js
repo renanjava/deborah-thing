@@ -93,7 +93,7 @@ function openModal(diseaseId) {
         </div>
     
         <div style="margin-bottom: 20px;">
-            <h3 style="color: #ff6b6b; margin-bottom: 10px;">⚠️ Sintomas</h3>
+            <h3 style="color: #ff6b6b; margin-bottom: 10px;">⚠️ Sintomas: ${disease.sintoma_tipo}</h3>
             <p style="line-height: 1.6; color: #e5e7eb;">${disease.sintomas}</p>
         </div>
     

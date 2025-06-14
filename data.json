@@ -9,6 +9,7 @@
         "classificacao": ["Plesionecrótico", "Localizado"],
         "descricao": "Doença bacteriana quarentenária que causa lesões características em folhas, ramos e frutos de citros, sendo de notificação obrigatória no Brasil.",
         "sintomas": "Lesões circulares salientes (cancros) com centro necrótico e halo amarelado característico em folhas e frutos. As lesões têm aspecto corticoso e podem causar desfolha prematura.",
+        "sintoma_tipo": "Holonecrótica",
         "sintomas_detalhados": "Morfologia: Lesões circulares de 2-10mm de diâmetro, salientes, com centro necrótico marrom e halo amarelo bem definido. Forma: Circular a irregular. Cor: Centro marrom-escuro com halo amarelo-claro. Padrão: Distribuição aleatória na superfície foliar.",
         "controle": [
             "Medidas quarentenárias rigorosas",
@@ -30,6 +31,7 @@
         "classificacao": ["Hiperplástico", "Localizado"],
         "descricao": "Doença fúngica que causa lesões verrucosas características em frutos jovens e folhas de citros, afetando principalmente a qualidade dos frutos.",
         "sintomas": "Lesões verrucosas, salientes e irregulares em frutos jovens. Em folhas, manchas pequenas com centro claro e bordas escuras.",
+        "sintoma_tipo": "Hiperplástica",
         "sintomas_detalhados": "Morfologia: Lesões verrucosas, corticosas e salientes de 1-5mm. Forma: Irregular, com superfície rugosa. Cor: Marrom-clara a escura. Padrão: Agrupadas em frutos jovens, esparsas em folhas maduras.",
         "controle": [
             "Aplicação de fungicidas cúpricos",
@@ -50,6 +52,7 @@
         "classificacao": ["Holonecrótico", "Sistêmico"],
         "descricao": "Doença fúngica devastadora que causa necrose dos ponteiros e ramos da mangueira, podendo levar à morte da planta em casos severos.",
         "sintomas": "Necrose progressiva dos ponteiros, escurecimento vascular, gomose e morte descendente dos ramos. Folhas amarelam e secam rapidamente.",
+        "sintoma_tipo": "Holonecrótica",
         "sintomas_detalhados": "Morfologia: Necrose descendente dos ramos, escurecimento vascular interno. Forma: Linear ao longo dos ramos. Cor: Marrom-escura a preta. Padrão: Progressão descendente dos ponteiros para ramos mais grossos.",
         "controle": [
             "Poda sanitária dos ramos afetados",
@@ -71,6 +74,7 @@
         "classificacao": ["Plesionecrótico", "Foliar"],
         "descricao": "Doença fúngica mais destrutiva da bananicultura mundial, causando necrose foliar severa e redução drástica da produtividade.",
         "sintomas": "Estrias amarelas que evoluem para manchas necróticas com halo amarelo. Coalescência das lesões causa necrose de grandes áreas foliares.",
+        "sintoma_tipo": "Holonecrótica",
         "sintomas_detalhados": "Morfologia: Inicialmente estrias cloróticas de 1-2mm que evoluem para manchas elípticas de 10-20mm. Forma: Elíptica a irregular. Cor: Centro necrótico marrom com halo amarelo. Padrão: Paralelo às nervuras foliares.",
         "controle": [
             "Aplicação sistemática de fungicidas",
@@ -92,6 +96,7 @@
         "classificacao": ["Hiperplástico", "Superficial"],
         "descricao": "Doença fúngica superficial que forma uma camada escura semelhante à fuligem sobre folhas e frutos, reduzindo a fotossíntese.",
         "sintomas": "Camada superficial escura, semelhante à fuligem, que recobre folhas, ramos e frutos. Facilmente removível com fricção.",
+        "sintoma_tipo": "Hipoplastica",
         "sintomas_detalhados": "Morfologia: Crescimento micelial superficial formando camada escura. Forma: Cobertura uniforme ou em manchas. Cor: Preta a cinza-escura. Padrão: Sobre melada deixada por insetos sugadores.",
         "controle": [
             "Controle de insetos sugadores (cochonilhas, pulgões)",
@@ -112,6 +117,7 @@
         "classificacao": ["Plesionecrótico", "Foliar"],
         "descricao": "Doença causada por alga parasita que forma manchas características verde-alaranjadas em folhas de abacate, especialmente em regiões úmidas.",
         "sintomas": "Manchas circulares verde-alaranjadas com bordas bem definidas. Em casos severos, pode causar desfolha e redução do vigor da planta.",
+        "sintoma_tipo": "Holonecrótica",
         "sintomas_detalhados": "Morfologia: Manchas circulares de 2-15mm de diâmetro. Forma: Circular a oval. Cor: Verde-alaranjada a ferrugínea. Padrão: Distribuição aleatória na superfície foliar, mais comum na face superior.",
         "controle": [
             "Aplicação de fungicidas cúpricos",
@@ -132,6 +138,7 @@
         "classificacao": ["Holonecrótico", "Vascular"],
         "descricao": "Doença fúngica que provoca lesões avermelhadas nas folhas da cana-de-açúcar, principalmente nas nervuras, afetando a fotossíntese e a planta.",
         "sintomas": "Podridão avermelhada nas nervuras das folhas, com possível murcha e necrose em tecidos próximos. Manchas podem evoluir para áreas mortas e secas.",
+        "sintoma_tipo": "Holonecrótica",
         "sintomas_detalhados": "Morfologia: Lesões necróticas nas folhas. Forma: Alongadas, seguindo as nervuras principais. Cor: Avermelhadas a púrpura nas nervuras, com margens escuras. Padrão: Início nas folhas mais velhas, podendo progredir para as superiores.",
         "controle": [
           "Utilização de variedades geneticamente resistentes",
@@ -153,6 +160,7 @@
         "classificacao": ["Hiperplástico", "Superficial"],
         "descricao": "Doença fúngica que forma uma camada pulverulenta branca sobre folhas e ramos de quiabo, especialmente em condições de baixa umidade.",
         "sintomas": "Crescimento pulverulento branco na superfície das folhas, inicialmente em manchas circulares que se expandem e coalescem.",
+        "sintoma_tipo": "Hipoplastica",
         "sintomas_detalhados": "Morfologia: Crescimento micelial superficial pulverulento. Forma: Manchas circulares que se expandem. Cor: Branca a cinza-clara. Padrão: Inicialmente na face superior das folhas, expandindo-se para ambas as faces.",
         "controle": [
             "Aplicação de fungicidas sistêmicos",
@@ -173,6 +181,7 @@
         "classificacao": ["Foliar", "Epidérmica"],
         "descricao": "Doença fúngica que afeta diversas espécies da família Myrtaceae, incluindo a pitangueira, provocando lesões foliares e queda prematura das folhas.",
         "sintomas": "Manchas escuras e deprimidas nos frutos, com presença de pústulas alaranjadas que liberam esporos.",
+        "sintoma_tipo": "Holonecrótica",
         "sintomas_detalhados": "Morfologia: Pústulas arredondadas. Cor: Laranja vivo. Localização: Predominantemente na face inferior das folhas, podendo atingir ramos e frutos.",
         "controle": [
             "Plantio de variedades resistentes",
