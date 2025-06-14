@@ -124,47 +124,27 @@
     },
     {
         "id": 7,
-        "nome": "Podridão Vermelha da Cana",
+        "nome": "Antracnose da Cana-de-Açúcar",
         "patogeno": "Colletotrichum falcatum",
-        "tipo": "fungica",
+        "tipo": "fúngica",
         "severidade": "alta",
         "icone": "./images/cana-acucar-podridao-vermelha.jpg",
         "classificacao": ["Holonecrótico", "Vascular"],
-        "descricao": "Doença fúngica devastadora que causa podridão interna dos colmos da cana-de-açúcar, caracterizada por coloração avermelhada típica.",
-        "sintomas": "Podridão interna do colmo com coloração avermelhada característica. Externamente pode apresentar manchas avermelhadas e crescimento de fungos.",
-        "sintomas_detalhados": "Morfologia: Podridão interna do colmo com descoloração. Forma: Linear ao longo do colmo. Cor: Vermelha intensa no interior do colmo. Padrão: Progressão ascendente ou descendente no colmo.",
+        "descricao": "Doença fúngica que provoca podridão avermelhada nos colmos da cana-de-açúcar, afetando a produtividade e a qualidade do caldo.",
+        "sintomas": "Apresenta podridão interna do colmo com coloração avermelhada intensa. Externamente, podem surgir manchas avermelhadas e sinais do crescimento do fungo.",
+        "sintomas_detalhados": "Morfologia: Necrose e podridão interna nos colmos. Forma: Lesões lineares, alongadas no sentido do colmo. Cor: Vermelho escuro a púrpura internamente. Padrão: Avanço irregular, podendo se propagar por vários entrenós.",
         "controle": [
-            "Uso de variedades resistentes",
-            "Tratamento térmico de mudas",
-            "Controle de pragas que causam ferimentos",
-            "Evitar ferimentos mecânicos",
-            "Rotação de culturas",
-            "Eliminação de touceiras infectadas"
+          "Utilização de variedades geneticamente resistentes",
+          "Tratamento térmico das mudas antes do plantio",
+          "Controle de insetos-praga que provocam feridas nos colmos",
+          "Evitar lesões mecânicas durante o cultivo e a colheita",
+          "Prática de rotação de culturas com espécies não hospedeiras",
+          "Erradicação de plantas visivelmente infectadas"
         ],
-        "impacto": "Uma das principais doenças da cana-de-açúcar, pode causar perdas de 20-30% na produção e significativa redução na qualidade do caldo."
-    },
+        "impacto": "A Antracnose pode resultar em perdas econômicas significativas, reduzindo a produtividade da cana-de-açúcar em até 30%, além de afetar a qualidade do caldo, prejudicando o rendimento industrial."
+    },      
     {
         "id": 8,
-        "nome": "Encarquilhamento da Soja",
-        "patogeno": "Bean pod mottle virus (BPMV)",
-        "tipo": "viral",
-        "severidade": "media",
-        "icone": "./images/encarquilhamento-soja.jpg",
-        "classificacao": ["Hipoplástico", "Sistêmico"],
-        "descricao": "Doença viral transmitida por besouros que causa deformação e encarquilhamento das folhas de soja, afetando o desenvolvimento da planta.",
-        "sintomas": "Encarquilhamento e deformação das folhas, mosaico verde-claro e escuro, nanismo da planta e redução no tamanho das vagens.",
-        "sintomas_detalhados": "Morfologia: Deformação foliar com encarquilhamento das bordas. Forma: Folhas distorcidas e curvadas. Cor: Mosaico de tons verdes. Padrão: Sintomas sistêmicos em toda a planta.",
-        "controle": [
-            "Controle de besouros vetores",
-            "Uso de variedades resistentes",
-            "Eliminação de plantas hospedeiras alternativas",
-            "Manejo integrado de pragas",
-            "Rotação de culturas"
-        ],
-        "impacto": "Pode causar redução de 10-20% na produtividade e afetar a qualidade dos grãos, especialmente em infecções precoces."
-    },
-    {
-        "id": 9,
         "nome": "Oídio do Quiabo",
         "patogeno": "Erysiphe cichoracearum",
         "tipo": "fungica",
@@ -184,7 +164,7 @@
         "impacto": "Reduz a capacidade fotossintética das plantas e pode causar perdas de 15-30% na produção de frutos comerciais."
     },
     {
-        "id": 10,
+        "id": 9,
         "nome": "Ferrugem do fruto da Pitanga",
         "patogeno": "Puccinia psidii",
         "tipo": "fungica",

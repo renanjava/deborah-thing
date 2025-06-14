@@ -33,25 +33,16 @@ function renderDiseases(diseases) {
 
     diseasesGrid.innerHTML = diseases.map(disease => `
         <div class="disease-card" onclick="openModal(${disease.id})">
-            <div class="disease-header">
-                <div class="disease-icon">
-                    <img src="${disease.icone}" alt="${disease.nome}" />
-                </div>
-                <div>
-                    <div class="disease-title">${disease.nome}</div>
-                    <div class="disease-pathogen">${disease.patogeno}</div>
-                </div>
+            <div class="disease-card-img">
+                <img src="${disease.icone}" alt="${disease.nome}" />
             </div>
-            
-            <div class="disease-description">${disease.descricao}</div>
-            
-            <div class="disease-symptoms">
-                <div class="symptoms-title">Sintomas Principais</div>
-                <div class="symptoms-list">${disease.sintomas.substring(0, 120)}...</div>
-            </div>
-            
-            <div class="severity-indicator severity-${disease.severidade.toLowerCase()}">
-                Severidade ${disease.severidade.charAt(0).toUpperCase() + disease.severidade.slice(1)}
+            <div class="disease-card-info">
+                <div class="disease-title">${disease.nome}</div>
+                <div class="disease-pathogen">${disease.patogeno}</div>
+                <div class="disease-description">${disease.descricao}</div>
+                <div class="severity-indicator severity-${disease.severidade.toLowerCase()}">
+                    Severidade ${disease.severidade.charAt(0).toUpperCase() + disease.severidade.slice(1)}
+                </div>
             </div>
         </div>
     `).join('');
