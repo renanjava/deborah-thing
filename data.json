@@ -130,19 +130,19 @@
         "severidade": "alta",
         "icone": "./images/cana-acucar-podridao-vermelha.jpg",
         "classificacao": ["Holonecrótico", "Vascular"],
-        "descricao": "Doença fúngica que provoca podridão avermelhada nos colmos da cana-de-açúcar, afetando a produtividade e a qualidade do caldo.",
-        "sintomas": "Apresenta podridão interna do colmo com coloração avermelhada intensa. Externamente, podem surgir manchas avermelhadas e sinais do crescimento do fungo.",
-        "sintomas_detalhados": "Morfologia: Necrose e podridão interna nos colmos. Forma: Lesões lineares, alongadas no sentido do colmo. Cor: Vermelho escuro a púrpura internamente. Padrão: Avanço irregular, podendo se propagar por vários entrenós.",
+        "descricao": "Doença fúngica que provoca lesões avermelhadas nas folhas da cana-de-açúcar, principalmente nas nervuras, afetando a fotossíntese e a planta.",
+        "sintomas": "Podridão avermelhada nas nervuras das folhas, com possível murcha e necrose em tecidos próximos. Manchas podem evoluir para áreas mortas e secas.",
+        "sintomas_detalhados": "Morfologia: Lesões necróticas nas folhas. Forma: Alongadas, seguindo as nervuras principais. Cor: Avermelhadas a púrpura nas nervuras, com margens escuras. Padrão: Início nas folhas mais velhas, podendo progredir para as superiores.",
         "controle": [
           "Utilização de variedades geneticamente resistentes",
           "Tratamento térmico das mudas antes do plantio",
-          "Controle de insetos-praga que provocam feridas nos colmos",
-          "Evitar lesões mecânicas durante o cultivo e a colheita",
-          "Prática de rotação de culturas com espécies não hospedeiras",
-          "Erradicação de plantas visivelmente infectadas"
+          "Controle de pragas que favorecem a infecção por ferimentos",
+          "Evitar lesões mecânicas durante o cultivo",
+          "Rotação de culturas com espécies não hospedeiras",
+          "Remoção de folhas ou plantas infectadas"
         ],
-        "impacto": "A Antracnose pode resultar em perdas econômicas significativas, reduzindo a produtividade da cana-de-açúcar em até 30%, além de afetar a qualidade do caldo, prejudicando o rendimento industrial."
-    },      
+        "impacto": "Pode causar perdas de até 30% na produtividade da cana-de-açúcar, principalmente pela redução da área foliar funcional e da eficiência fotossintética."
+      },      
     {
         "id": 8,
         "nome": "Oídio do Quiabo",
